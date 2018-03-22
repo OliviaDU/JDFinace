@@ -1,0 +1,33 @@
+@import './layout.scss';
+
+@mixin btn($fontSize:14px,$color:#fff,$bgcolor:#f04752,$padding:5px,$radius:5px) {
+    font-size: $fontSize;
+    color: $color;
+    padding: $padding;
+    background-color: $bgcolor;
+    border-radius: $radius;
+    border: 1px solid $bgcolor;
+    text-align: center;
+    line-height: 1;
+    display: inline-block;
+}
+
+@mixin list($direction:column) {
+    @include flex($direction);
+}
+
+@mixin panel($bgcolor:#fff,$padding:0,$margin:20px 0,$height:112px,$textPadding:0 32px,$color:#333,$fontSize:32px) {
+    padding: $padding;
+    margin: $margin;
+    background-color: $bgcolor;
+    >h4{
+        height: $height;
+        line-height: $height;//标题一般是单行，以此让其垂直居中
+        text-align: center;
+        text-overflow: ellipsis;//text溢出，以...展示
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: $fontSize;
+        color: $color;
+    }
+}
